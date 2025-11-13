@@ -5,17 +5,19 @@
     ::shadow {
         box-shadow: var(--shadow);
     }
+
     font-family: var(--font-family);
     max-width: fit-content;
     max-height: fit-content;
 }
 
 .title {
-  color: var(--golden-yellow);
-  max-width: fit-content;
-  ::shadow {
-    text-shadow: var(--shadow);
-  }
+    color: var(--golden-yellow);
+    max-width: fit-content;
+
+    ::shadow {
+        text-shadow: var(--shadow);
+    }
 }
 
 .description {
@@ -45,25 +47,49 @@
     }
 }
 
-.buttonlink {
-    border: 2px solid var(--darker-blue-background);
-    font-family: var(--font-primary);
-    color: var(--darker-blue-background);
-    width: 152px;
-    height: 48px;
-    background-color: var(--button);
-    box-shadow:  3px 3px 3px var(--black);
-    text-emphasis-color: inherit;
-}
-
-.buttonlink:hover {
-    transform:  scale(1.1);
-     color: var(--golden-yellow);
-}
-
-.cta {
-    bottom: 1rem;
+/* app.component.css */
+.nes-field {
     display: flex;
-    gap: 32px;
-    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    color: var(--blue-background);
+    
+}
+
+/* Base NES-like input style */
+.nes-input {
+    color: var(--green2);
+    border: 3px solid (--brownish-orange);
+    outline: none;
+    padding: 8px 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    background-color: var(--darker-blue-background);
+    box-shadow: inset -3px -3px var(--darker-blue-background), inset 3px 3px var(--darker-blue-background);
+    resize: none;
+    /* disable manual resize handle */
+    overflow: hidden;
+    transition: all 0.1s ease-in-out;
+
+    ::shadow {
+        box-shadow: var(--brownish-orange);
+    }
+}
+
+
+
+.nes-input.is-success {
+    border-color: var(--golden-yellow);
+    // box-shadow: inset -3px -3px #dff0c6, inset 3px 3px #dff0c6;
+}
+
+.nes-input:focus {
+    box-shadow: inset -3px -3px var(--darker-blue-background), inset 3px 3px var(--blue-background);
+
+}
+
+.auto-expand {
+    min-height: 40px;
 }

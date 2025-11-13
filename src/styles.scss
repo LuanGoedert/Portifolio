@@ -25,6 +25,9 @@
   --shadow-major: 4px 4px 4px var(--brownish-orange);
   --button: #22c55E;
   --border: #ededed;
+  --white: #ffffff;
+
+
 }
 
 html {
@@ -51,27 +54,26 @@ a {
   padding: 0 24px;
 }
 
-//global description for use in all project
-// .description {
-//   display: inline-flex;
-//   flex-direction: column;
-//   text-align: left;
-//   width: auto;
-//   font-size: auto;
-//   min-height: max-content;
-//   padding: 5px;
-//   -webkit-text-stroke: .7px var(--dark-gray);
-// }
+.buttonlink {
+  border: 0px solid var(--golden-yellow);
+  font-family: var(--font-primary);
+  color: var(--black);
+  width: 152px;
+  height: 48px;
+  background-color: var(--green2);
+  box-shadow: 3px 3px 3px var(--black);
+}
 
-// .description h3 {
-//   max-width: fit-content;
-//   color: var(--golden-yellow);
-//   font-family: var(--font-primary);
-//   margin-bottom: 5px;
+.buttonlink:hover {
+  -webkit-text-stroke: 0;
+  transform: scale(1.2);
+  color: var(--white);
+  box-shadow: 5px 5px 5px var(--golden-yellow);
+}
 
-//   -webkit-text-stroke: 0;
-
-//   ::shadow {
-//     text-shadow: var(--shadow)
-//   }
-// }
+.cta {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  margin: 10px;
+}

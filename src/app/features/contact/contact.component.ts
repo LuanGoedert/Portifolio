@@ -7,7 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
- public openLink(url: string): void {
+
+  onInput(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
+  public openLink(url: string): void {
     window.open(url, '_blank');
   }
 }

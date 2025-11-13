@@ -1,6 +1,7 @@
 .title {
   color: var(--golden-yellow);
   max-width: fit-content;
+
   ::shadow {
     text-shadow: var(--shadow);
   }
@@ -16,7 +17,7 @@
   font-size: auto;
   min-height: max-content;
   padding: 5px;
-background-color: var(--blue-background);
+  background-color: var(--blue-background);
   -webkit-text-stroke: .7px var(--dark-gray);
 }
 
@@ -46,18 +47,3 @@ background-color: var(--blue-background);
   }
 }
 
-.buttonlink {
-    border: 2px solid var(--darker-blue-background);
-    font-family: var(--font-primary);
-    color: var(--darker-blue-background);
-    width: 152px;
-    height: 48px;
-    background-color: var(--button);
-    box-shadow:  3px 3px 3px var(--black);
-    text-emphasis-color: inherit;
-}
-
-.buttonlink:hover {
-    transform:  scale(1.1);
-     color: var(--golden-yellow);
-}

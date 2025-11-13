@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-projects',
-    standalone: true,                 // <-- important for standalone apps
-    imports: [CommonModule],          // <-- allows *ngIf, *ngFor, etc. if needed
+    imports: [CommonModule],
     templateUrl: './projects.component.html',
     styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent {
+   
     public openLink(url: string): void {
         window.open(url, '_blank');
     }
