@@ -78,8 +78,6 @@
     }
 }
 
-
-
 .nes-input.is-success {
     border-color: var(--golden-yellow);
     // box-shadow: inset -3px -3px #dff0c6, inset 3px 3px #dff0c6;
@@ -92,4 +90,22 @@
 
 .auto-expand {
     min-height: 40px;
+}
+
+.textarea-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.textarea-wrapper textarea {
+  width: 300px;
+  height: 120px;
+  padding-right: 60px; /* space for the button */
+}
+
+.inner-btn {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 6px 10px;
 }
