@@ -31,5 +31,18 @@ export class ContactComponent {
   public openLink(url: string): void {
     window.open(url, '_blank');
   }
+  async downloadResume() {
+    const response = await fetch("assets/LuanGoedert-EngineerResume.pdf");
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "LuanGoedert-EngineerResume.pdf";
+    a.click();
+
+    URL.revokeObjectURL(url);
+  }
+
 
 }

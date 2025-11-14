@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink, } from "@angular/router";
-import { DetailsComponent } from '../details/details.component';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -8,7 +6,7 @@ import { DatePipe } from '@angular/common';
   standalone: true,                // <-- important
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  imports: [RouterLink, DetailsComponent, DatePipe],
+  imports: [DatePipe],
 })
 
 
