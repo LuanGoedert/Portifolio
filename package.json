@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:portifolio": "node dist/portifolio/server/server.mjs"
+    "serve:ssr:portifolio": "node dist/portifolio/server/server.mjs",
+    "build:gh": "ng build --base-href \"/Portifolio/\""
   },
   "prettier": {
     "printWidth": 100,
