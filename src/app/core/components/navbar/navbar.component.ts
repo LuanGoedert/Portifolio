@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
+import { start } from 'node:repl';
 
 @Component({
   selector: 'app-navbar',
@@ -11,8 +12,7 @@ import { DatePipe } from '@angular/common';
 
 
 export class NavbarComponent {
-
-  programmingSoftwareSince = new Date('2020-09-08');
+  programmingSoftwareSince = new Date('2020-09-09');
   programmingGamesSince = new Date('2023-01-10');
   gameDeveloperXp = this.getDaysAsXP(this.programmingGamesSince);
   softwareDeveloperXP = this.getDaysAsXP(this.programmingSoftwareSince);
@@ -30,13 +30,16 @@ export class NavbarComponent {
 
   getDaysAsXP(startingDate: Date): number {
     const today = new Date();
-    const diffms = today.getTime() - startingDate.getTime();
-    const miliSecondsPerSecond = 1000;
-    const secondsPerMinute = 60;
-    const minutesPerHour = 60;
-    const hoursPerday = 24
 
-    return Math.floor(diffms / (miliSecondsPerSecond * secondsPerMinute * minutesPerHour * hoursPerday));
+    const monthNow = today.getMonth();
+    const yearNow = today.getFullYear();
+
+    const monthStart = startingDate.getMonth();
+    const yearStart = startingDate.getFullYear();
+
+    const yearsOfXp = yearNow - yearStart;
+    const monthsOfXp = (monthNow - monthStart) * .1;
+    return (yearsOfXp + monthsOfXp) * 1000;
   }
 
   getAge(birthdate: string): number {
