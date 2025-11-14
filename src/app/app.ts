@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from './core/components/navbar/navbar.component'; // <-- import
-import { HomeComponent } from './features/home/home.component';      
-import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from './core/components/footer/footer.component';
+import { NavbarComponent } from './core/components/navbar/navbar.component'; 
+import { MainComponent } from './features/main/main.component';
 
 @Component({
   selector: 'app',
   standalone: true,
-  imports: [CommonModule, NavbarComponent, HomeComponent, RouterOutlet, FooterComponent],  // <-- add here
+  imports: [CommonModule, NavbarComponent, MainComponent], 
   templateUrl: './app.html',
   styleUrls: ['./app.scss'],
 })
