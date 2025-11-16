@@ -96,7 +96,7 @@
   cursor: help;
 
   .tooltip {
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     background: var(--blue-background);
     color: var(--golden-yellow);
@@ -105,8 +105,7 @@
     white-space: nowrap;
     visibility: hidden;
     opacity: 0;
-    bottom: -100;
-
+    bottom: -100px;
     left: 50%;
     transform: translateX(-50%);
     transition: opacity 0.3s, visibility 0.3s;
@@ -114,7 +113,6 @@
     box-shadow: var(--shadow);
     z-index: 1;
 
-    /* Add a small arrow pointing up */
     &::before {
       content: '';
       position: absolute;
