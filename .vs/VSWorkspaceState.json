@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\core",
+    "\\src\\app\\core\\components",
+    "\\src\\app\\core\\components\\navbar",
+    "\\src\\app\\features",
+    "\\src\\assets",
+    "\\src\\assets\\images"
+  ],
+  "SelectedNode": "\\src\\app\\core\\components\\navbar\\navbar.component.scss",
+  "PreviewInSolutionExplorer": false
+}
