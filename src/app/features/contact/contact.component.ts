@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from 'emailjs-com';
 
@@ -10,6 +10,9 @@ import emailjs from 'emailjs-com';
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
+
+  @ViewChild('emailArea') emailArea: any;
+  @ViewChild('senderArea') senderArea: any;
 
   message = '';
 
@@ -29,7 +32,7 @@ export class ContactComponent {
         '5-rp1Uwakg1W_xZUW'    // 👈 the one you just copied
       )
       .then((res) => {
-        console.log('EmailJS SUCCESS:', res);
+        this.emailArea.nativeElement.value = '';
         alert('Message sent!');
       })
       .catch(() => {
@@ -46,7 +49,7 @@ export class ContactComponent {
   public openLink(url: string): void {
     window.open(url, '_blank');
   }
-  
+
   async downloadResume() {
     const response = await fetch("assets/LuanGoedert-EngineerResume.pdf");
     const blob = await response.blob();
