@@ -1,28 +1,41 @@
 <section id="contact">
-    <div class="title">
-        Contact
+  <div class="title">
+    Contact
+  </div>
+  <div class="description">
+    <h3>> Visit me in other places</h3>
+    <p>
+      Feel free to reach me on my social media, you can send a email down below if you want, also some hints and
+      feedbacks on self improvement are welcome. I Hope you enjoyed this portifolio.
+    </p>
+
+    <div class="nes-field">
+      <textarea
+        #emailArea
+        [(ngModel)]="message"
+        id="message_field"
+        class="nes-input is-success auto-expand"
+        placeholder="Leave a message..."
+        (input)="onInput($event)"
+      ></textarea>
     </div>
-    <div class="description">
-        <h3>> Visit me in oher places</h3>
-        <p>
-            Feel free to reach me on my social media, you can send a email down below if you want, also some hints and
-            feedbacks on self improvement are welcome. I Hope you enjoyed this portifolio.
-        </p>
-        <div class="nes-field">
-            <textarea #emailArea [(ngModel)]="this.message" id="message_field" class="nes-input is-success auto-expand"
-                placeholder="Leave a message..."></textarea>
-        </div>
-        <div class="cta">
-            <button class="buttonsend" (click)="sendEmailMessage()">> Send</button>
-            <button class="buttonlink" (click)="openLink('https://github.com/LuanGoedert/')">
-                GitHub
-            </button>
-            <button class="buttonlink" (click)="openLink('https://www.linkedin.com/in/luan-goedert/')">
-                Linkedin
-            </button>
-            <button class="buttonlink"(click)="downloadResume()">
-                Download resume
-            </button>
-        </div>
+
+    <!-- Popup component -->
+    <app-popup #popup></app-popup>
+
+    <div class="cta">
+      <!-- pass popup to TS -->
+      <button class="buttonsend" (click)="sendEmailMessage(popup)">> Send</button>
+
+      <button class="buttonlink" (click)="openLink('https://github.com/LuanGoedert/')">
+        GitHub
+      </button>
+      <button class="buttonlink" (click)="openLink('https://www.linkedin.com/in/luan-goedert/')">
+        Linkedin
+      </button>
+      <button class="buttonlink" (click)="downloadResume()">
+        Download resume
+      </button>
     </div>
+  </div>
 </section>

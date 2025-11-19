@@ -1,22 +1,22 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import emailjs from 'emailjs-com';
+import { PopupComponent } from '../../core/components/popup/popup.component';
 
 @Component({
   standalone: true,
   selector: 'app-contact',
-  imports: [FormsModule],
+  imports: [FormsModule, PopupComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
 
   @ViewChild('emailArea') emailArea: any;
-  @ViewChild('senderArea') senderArea: any;
 
   message = '';
 
-  sendEmailMessage() {
+  sendEmailMessage(popup: PopupComponent) {
     if (!this.message.trim()) return;
 
     const templateParams = {
@@ -24,19 +24,26 @@ export class ContactComponent {
       reply_to: 'luangoedert336@gmail.com',
     };
 
+    popup.show('Message sent!');
+    console.log('sendEmailMessage called');        // DEBUG
+
     emailjs
       .send(
-        'service_0ltpqc5',   // e.g. 'service_xxxxxx'
-        'template_cp8drja',  // e.g. 'template_yyyyyy'
+        'service_0ltpqc5',
+        'template_cp8drja',
         templateParams,
-        '5-rp1Uwakg1W_xZUW'    // 👈 the one you just copied
+        '5-rp1Uwakg1W_xZUW'
       )
       .then((res) => {
+        // DEBUG
+        popup.show('Failed to send. Try again later.');
+        this.message = '';
         this.emailArea.nativeElement.value = '';
-        alert('Message sent!');
       })
-      .catch(() => {
-        alert('Failed to send message. Please try again later.');
+      .catch((err) => {
+        console.log('emailjs error', err);         // DEBUG
+        popup.show('Failed to send. Try again later.');
+        // or alert(...)
       });
   }
 
@@ -62,6 +69,4 @@ export class ContactComponent {
 
     URL.revokeObjectURL(url);
   }
-
-
 }

@@ -11,26 +11,20 @@
         <span>Game Developer</span>
       </p>
       <nav class="nav">
-        <a (click)="scrollToSection('home')" class="link" style="cursor: pointer;">Home</a>
-        <a (click)="scrollToSection('about')" class="link" style="cursor: pointer;">About</a>
-        <a (click)="scrollToSection('projects')" class="link" style="cursor: pointer;">Projects</a>
-        <a (click)="scrollToSection('contact')" class="link" style="cursor: pointer;">Contact</a>
+        <a (click)="scrollToSection('home')" class="link">Home</a>
+        <a (click)="scrollToSection('about')" class="link">About</a>
+        <a (click)="scrollToSection('projects')" class="link">Projects</a>
+    <a (click)="scrollToSection('contact')" class="link">Contact</a>
       </nav>
     </div>
     <div class="right">
-      <a>Level: {{ myAge }}</a>
+      <a>Age: {{ myAge }}</a>
       <a>Games developed: {{gamesDelivered}}</a>
-      <a>Software dev XP: {{softwareDeveloperXP }}</a>
-      <a>Game dev XP: {{gameDeveloperXp}}</a>
+      <a>Developing software since 2020</a>
+      <a>Developing games since 2023</a>
       <a>Location: {{location}}</a>
       <a>Email: {{email}}</a>
       <a>Languages: EN/PT-BR</a>
-      <div class="tooltip">
-        <p>{{ myAge }} years.</p>
-        <p>Developing software since {{ programmingSoftwareSince | date:'yyyy/MM'}}.</p>
-        <p>Developing games since {{ programmingGamesSince | date:'yyyy/MM'}}.</p>
-
-      </div>
     </div>
   </div>
 </header>

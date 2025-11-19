@@ -93,42 +93,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  cursor: help;
-
-  .tooltip {
-    position: fixed;
-    flex-direction: column;
-    background: var(--blue-background);
-    color: var(--golden-yellow);
-    padding: 8px 12px;
-    font-size: 12px;
-    white-space: nowrap;
-    visibility: hidden;
-    opacity: 0;
-    bottom: -100px;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.3s, visibility 0.3s;
-    border: 1px solid var(--golden-yellow);
-    box-shadow: var(--shadow);
-    z-index: 1;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: -8px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 0 8px 8px 8px;
-      border-style: solid;
-      border-color: transparent transparent var(--golden-yellow) transparent;
-    }
-  }
-
-  &:hover .tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
+  
 
   align-items: flex-start;
   align-self: flex-start;
