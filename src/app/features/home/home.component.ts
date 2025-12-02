@@ -4,8 +4,8 @@ import { Component} from '@angular/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  standalone: true,                 // <-- important for standalone apps
-  imports: [CommonModule],          // <-- allows *ngIf, *ngFor, etc. if needed
+  standalone: true,                 
+  imports: [CommonModule],          
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent  {

@@ -1,11 +1,39 @@
 .popup {
+  border: 2px solid var(--golden-yellow);
   position: fixed;
   bottom: 20px;
   right: 20px;
   padding: 12px 20px;
-  background: #333;
-  color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  background: var(--blue-background);
+  color: var(--golden-yellow);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   z-index: 9999;
+
+  ::shadow {
+    box-shadow: var(--shadow)
+  }
+
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  85% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
 }
